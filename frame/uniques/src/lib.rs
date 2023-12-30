@@ -163,7 +163,7 @@ pub mod pallet {
 	#[pallet::storage]
 	#[pallet::storage_prefix = "Class"]
 	/// Details of a collection.
-	pub(super) type Collection<T: Config<I>, I: 'static = ()> = StorageMap<
+	pub type Collection<T: Config<I>, I: 'static = ()> = StorageMap<
 		_,
 		Blake2_128Concat,
 		T::CollectionId,
@@ -172,7 +172,7 @@ pub mod pallet {
 
 	#[pallet::storage]
 	/// The collection, if any, of which an account is willing to take ownership.
-	pub(super) type OwnershipAcceptance<T: Config<I>, I: 'static = ()> =
+	pub type OwnershipAcceptance<T: Config<I>, I: 'static = ()> =
 		StorageMap<_, Blake2_128Concat, T::AccountId, T::CollectionId>;
 
 	#[pallet::storage]
@@ -206,7 +206,7 @@ pub mod pallet {
 	#[pallet::storage]
 	#[pallet::storage_prefix = "Asset"]
 	/// The items in existence and their ownership details.
-	pub(super) type Item<T: Config<I>, I: 'static = ()> = StorageDoubleMap<
+	pub type Item<T: Config<I>, I: 'static = ()> = StorageDoubleMap<
 		_,
 		Blake2_128Concat,
 		T::CollectionId,
@@ -255,7 +255,7 @@ pub mod pallet {
 
 	#[pallet::storage]
 	/// Price of an asset instance.
-	pub(super) type ItemPriceOf<T: Config<I>, I: 'static = ()> = StorageDoubleMap<
+	pub type ItemPriceOf<T: Config<I>, I: 'static = ()> = StorageDoubleMap<
 		_,
 		Blake2_128Concat,
 		T::CollectionId,
